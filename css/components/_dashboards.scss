@@ -1,0 +1,113 @@
+.dashboards {
+    padding-bottom: 8.333rem;
+    @include atMedium {
+        padding-bottom: 6.25rem;
+    }
+
+    &__intro {
+        margin-bottom: 3rem;
+        text-align: center;
+        @include atMedium {
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    &__main {
+        margin-bottom: -30px;
+
+        &-item {
+            overflow: hidden;
+            position: relative;
+            border-radius: .833rem;
+            box-shadow: 0 0 1.167rem rgba($color-black, .08);
+            @include atMedium {
+                border-radius: .625rem;
+                box-shadow: 0 0 .875rem rgba($color-black, .08);
+            }
+
+            .play-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        [class^="col-"] {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__example {
+        border-radius: .833rem;
+        background-color: $color-white;
+        padding: 1.667rem 2rem 2rem 2rem;
+        box-shadow: 0 0 1.667rem rgba($color-black, .04);
+        @include atMedium {
+            height: 100%;
+            border-radius: .625rem;
+            padding: 1.25rem 1.5rem 1.5rem 1.5rem;
+            box-shadow: 0 0 1.25rem rgba($color-black, .04);
+        }
+
+        &-main {
+            margin-bottom: -1.667rem;
+            @include atMedium {
+                margin-bottom: -.5rem;
+            }
+            @include atLarge {
+                margin-bottom: -1.5625rem;
+            }
+
+            h6 {
+                color: $color-gray-drk-6;
+                font-weight: 500;
+                font-size: 1.083rem;
+                letter-spacing: 0;
+                margin-bottom: .667rem;
+                @include atMedium {
+                    font-size: .8125rem;
+                    margin-bottom: .5rem;
+                }
+            }
+
+            h5 {
+                color: $color-gray-drk;
+                font-weight: 300;
+                font-size: 2.333rem;
+                @include atMedium {
+                    font-size: 1.75rem;
+                }
+                @include atLarge {
+                    font-size: 1.333rem;
+                }
+                @include atExtralarge {
+                    font-size: 1.75rem;
+                }
+                @include atHuge {
+                    font-size: 1.5rem;
+                }
+            }
+
+            p {
+                font-weight: 500;
+                font-size: 1.083rem;
+                @include atMedium {
+                    font-size: .8125rem;
+                }
+            }
+
+            .row {
+                [class^="col-"] {
+                    margin-bottom: 1.667rem;
+                    @include atMedium {
+                        margin-bottom: .5rem;
+                    }
+                    @include atLarge {
+                        margin-bottom: 1.5625rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,96 @@
+// Font weight
+.u-weight {
+    &-lgt {
+        font-weight: 300;
+    }
+
+    &-reg {
+        font-weight: 400;
+    }
+
+    &-med {
+        font-weight: 500;
+    }
+
+    &-smb {
+        font-weight: 600;
+    }
+}
+
+
+// Color
+.u-color {
+    &-white {
+        color: $color-white;
+    }
+
+    &-gray {
+        color: $color-gray;
+
+        &-alt {
+            color: $color-gray-alt;
+
+            &-2 {
+                color: $color-gray-alt-2;
+            }
+            
+            &-6 {
+                color: $color-gray-alt-6;
+            }
+        }
+
+        &-lgt {
+            color: $color-gray-lgt;
+        }
+
+        &-drk {
+            color: $color-gray-drk !important;
+        }
+    }
+
+    &-primary {
+        color: $color-primary !important;
+
+        &-drk {
+            color: $color-primary-drk;
+        }
+
+        &-lgt {
+            color: $color-primary-lgt;
+        }
+    }
+
+    &-success {
+        color: $color-success;
+    }
+}
+
+
+// letter spacing
+.u-ls {
+    &-none {
+        letter-spacing: 0;    
+    }
+
+    &-md {
+        letter-spacing: 1px;
+    }
+
+    &-lg {
+        letter-spacing: 2px;
+    }
+}
+
+
+// Text transform
+.u-uppercase {
+    text-transform: uppercase;
+}
+
+
+// Position
+.u-position {
+    &-relative {
+        position: relative;
+    }
+}

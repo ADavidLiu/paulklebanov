@@ -1,0 +1,506 @@
+.header {
+    position: absolute;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.333rem 0;
+    background-color: $color-white;
+    @include atMedium {
+        padding: 1rem 0;
+    }
+
+    &__inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        img {
+            width: 1.833rem;
+            @include atMedium {
+                width: 1.375rem;
+            }
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 1.333rem;
+            margin-left: .833rem;
+            @include atMedium {
+                font-size: 1.125rem;
+                margin-left: 1.25rem;
+            }
+        }
+    }
+
+    &__btn {
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
+        background-color: rgba($color-white, 0);
+        width: 2.25rem;
+        height: 1.333rem;
+        position: relative;
+        @include atMedium {
+            display: none;
+        }
+
+        &-line {
+            width: 100%;
+            height: 1px;
+            background-color: $color-gray;
+            position: absolute;
+            left: 0;
+            transition: all .25s;
+            backface-visibility: hidden;
+
+            &:first-child {
+                top: 0;
+            }
+
+            &:nth-child(2) {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            &:last-child {
+                bottom: 0;
+            }
+        }
+
+        &:hover {
+            .header__btn-line {
+                background-color: $color-primary;
+            }
+        }
+    }
+
+    &__close {
+        cursor: pointer;
+        width: 3.667rem;
+        height: 3.667rem;
+        border-radius: 50%;
+        transition: all .25s;
+        position: relative;
+        padding: 0;
+        margin: 0 0 1.5rem 0;
+        background-color: $color-white;
+        box-shadow: 0 0 1.25rem rgba($color-black, .075);
+        @include atMedium {
+            margin-bottom: 2.125rem;
+            box-shadow: 0 0 .875rem rgba($color-black, .075);
+            display: none;
+        }
+
+        &-line {
+            height: 1px;
+            width: 50%;
+            display: block;
+            transition: all .25s;
+            backface-visibility: hidden;
+            background-color: $color-black;
+
+            &:first-child,
+            &:last-child {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin: 0;
+            }
+
+            &:first-child {
+                transform: translate(-50%, -50%) rotate(45deg);
+            }
+
+            &:last-child {
+                transform: translate(-50%, -50%) rotate(-45deg);
+            }
+        }
+
+        &:hover {
+            background-color: $color-primary-drk;
+
+            .header__close-line {
+                background-color: $color-white;
+            }
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transform: translateX(2rem);
+        background-color: $color-white;
+        padding: 2.5rem 20px;
+        transition: all .25s;
+        backface-visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        overflow: auto;
+        @include atMedium {
+            overflow: initial;
+            pointer-events: all;
+            opacity: 1;
+            padding: 0;
+            background-color: transparent;
+            height: auto;
+            position: static;
+            transform: none;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+    }
+
+    &__menu {
+        @include atMedium {
+            margin: 0 2.5rem;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        @include atLarge {
+            margin: 0 4.375rem;
+        }
+
+        &-trigger {
+            @include atMedium {
+                position: relative;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+
+            &-main {
+                @include atMedium {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            p {
+                transition: all .25s;
+                backface-visibility: hidden;
+            }
+
+            &-arrow {
+                height: 1.75rem;
+                cursor: pointer;
+                margin-left: .667rem;
+                transition: all .25s;
+                backface-visibility: hidden;
+                filter: brightness(0);
+                display: none;
+                @include atMedium {
+                    display: block;
+                    height: 1.3125rem;
+                    margin-left: .5rem;
+                }
+            }
+
+            &:before {
+                @include atMedium {
+                    content: "";
+                    position: absolute;
+                    bottom: -2rem;
+                    left: 0;
+                    width: 100%;
+                    height: 5rem;
+                    opacity: 0;
+                    pointer-events: none;
+                }
+            }
+
+            &:hover {
+                p {
+                    @include atMedium {
+                        color: $color-primary-drk;
+                    }
+                }
+
+                .header__menu-trigger-arrow {
+                    filter: none;
+                }
+
+                &:before {
+                    pointer-events: all;
+                }
+
+                .header__submenu {
+                    opacity: 1;
+                    pointer-events: all;
+                }
+            }
+        }
+
+        li {
+            position: relative;
+
+            p,
+            a {
+                font-size: 1.833rem;
+                font-weight: 600;
+                @include atMedium {
+                    font-size: .9375rem;
+                    font-weight: 500;
+                }
+
+                &:hover {
+                    color: $color-primary-drk;
+                }
+            }
+
+            & + li {
+                margin-top: 2rem;
+                @include atMedium {
+                    margin-top: 0;
+                    margin-left: 1.875rem;
+                }
+            }
+        }
+    }
+
+    &__submenu {
+        margin-top: .833rem;
+        @include atMedium {
+            margin-top: 0;
+            position: absolute;
+            z-index: 1;
+            bottom: -.75rem;
+            left: 0;
+            transform: translateY(100%);
+            min-width: 100%;
+            padding: 1.5625rem 3.125rem 1.5625rem 2.1875rem;
+            background-color: $color-white;
+            border-radius: .9375rem;
+            box-shadow: 0 4px 3.3125rem rgba($color-black, .04);
+            transition: all .25s;
+            backface-visibility: hidden;
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        li {
+            @include atMedium {
+                white-space: nowrap;
+            }
+
+            &:first-child {
+                &:hover {
+                    color: $color-gray-drk;
+                }
+            }
+
+            a {
+                font-weight: 500;
+                font-size: 1.25rem;
+                @include atMedium {
+                    font-size: .9375rem;
+                }
+            }
+
+            & + li {
+                margin-top: .833rem;
+                @include atMedium {
+                    margin-top: .35rem;
+                    margin-left: 0;
+                }
+            }
+        }
+
+        &--dark {
+            @include atMedium {
+                background-color: $color-gray-drk;
+            }
+
+            li,
+            h4,
+            p,
+            a {
+                @include atMedium {
+                    color: $color-white;
+                    @include linkStates($color-white, none);
+
+                    &:hover {
+                        color: $color-primary !important;
+                    }
+                }
+            }
+
+            h4 {
+                &:hover {
+                    @include atMedium {
+                        color: $color-white !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &__cta {
+        margin-top: 2rem;
+        @include atMedium {
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .btn {
+            border: 1px solid rgba($color-gray, .25);
+            background-color: transparent;
+            color: $color-gray;
+            margin-top: 1rem;
+            @include atMedium {
+                background-color: $color-primary;
+                color: $color-white;
+                border: 0;
+                margin-top: 0;
+            }
+
+            &:hover {
+                background-color: $color-gray;
+                color: $color-white;
+                @include atMedium {
+                    background-color: $color-primary-drk;
+                }
+            }
+        }
+
+        p {
+            a:last-child {
+                background-color: $color-primary;
+                border-radius: 10rem;
+                color: $color-white;
+                font-weight: 400;
+                padding: .5rem 1rem;
+                @include atMedium {
+                    background-color: transparent;
+                    padding: 0;
+                    border: 0;
+                    color: $color-gray-drk;
+                    font-weight: 500;
+                    padding: 0;
+                }
+
+                &:hover {
+                    background-color: $color-primary-drk;
+                    @include atMedium {
+                        background-color: transparent;
+                        color: $color-primary-drk;
+                    }
+                }
+            }
+        }
+    }
+
+    &.is-open {
+        .header {
+            &__nav {
+                transform: none;
+                opacity: 1;
+                pointer-events: all;
+            }
+        }
+    }
+
+    &.is-overlay {
+        background-color: transparent;
+
+        .header {
+            &__logo {
+                img {
+                    filter: brightness(0) invert(1);
+                }
+
+                p {
+                    color: $color-white !important;
+                }
+            }
+
+            &__menu {
+                &-trigger {
+                    img {
+                        filter: brightness(0) invert(1);
+                    }
+                }
+
+                li {
+                    * {
+                        @include atMedium {
+                            color: $color-white;
+                        }
+                    }
+                }
+            }
+
+            &__cta {
+                * {
+                    @include atMedium {
+                        color: $color-white;
+                    }
+                }
+            }
+
+            &__submenu {
+                h4,
+                li a {
+                    @include atMedium {
+                        color: $color-gray-drk !important;
+                    }
+                }
+
+                li {
+                    &:first-child {
+                        &:hover {
+                            @include atMedium {
+                                color: $color-white !important;
+                            }
+                        }
+                    }
+                }
+
+                li a {
+                    &:hover {
+                        @include atMedium {
+                            color: $color-primary-drk !important;
+                        }
+                    }
+                }
+
+                &.header__submenu--dark {
+                    h4 {
+                        @include atMedium {
+                            color: $color-white !important;
+                        }
+                    }
+
+                    li a {
+                        @include atMedium {
+                            color: $color-white !important;
+                        }
+
+                        &:hover {
+                            @include atMedium {
+                                color: $color-primary-drk !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

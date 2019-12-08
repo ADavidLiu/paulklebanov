@@ -1,0 +1,348 @@
+.reviews {
+    padding: 5.333rem 0 3.5rem 0;
+    @include atMedium {
+        padding: 4.1875rem 0 3.75rem 0;
+    }
+
+    &__subtitle {
+        margin-top: 1.25rem;
+    }
+
+    &__slider {
+        margin-top: 2.083rem;
+        @include atMedium {
+            margin-top: 1.875rem;
+        }
+
+        .slick {
+            &-list {
+                height: 100%;
+                margin: 0 -10px;
+                @include atMedium {
+                    margin: 0 -16px;
+                }
+            }
+
+            &-slide {
+                opacity: .5;
+                padding: 0 10px;
+                transition: all .25s;
+                backface-visibility: hidden;
+                @include atMedium {
+                    padding: 0 16px;
+                }
+
+                &.slick-current,
+                &.is-visible {
+                    opacity: 1;
+                }
+            }
+        }
+
+        &-item {
+            &:focus {
+                box-shadow: none;
+                outline: none;
+            }
+        }
+    }
+
+    &__item {
+        border-radius: .833rem;
+        padding: 1.333rem 1.667rem;
+        background-color: $color-white;
+        box-shadow: 0 0 2.333rem rgba($color-black, .05);
+        @include atMedium {
+            border-radius: .625rem;
+            padding: 1.5625rem 1.25rem;
+            box-shadow: 0 0 1.75rem rgba($color-black, .05);
+        }
+
+        &-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.333rem;
+            @include atMedium {
+                margin-bottom: 1rem;
+            }
+
+            &-logo {
+                height: 5rem;
+                flex: 1;
+                @include atMedium {
+                    height: 3.4375rem;
+                }
+
+                &-img {
+                    max-height: 100%;
+                    max-width: 100%;
+                }
+            }
+
+            &-state {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                font-weight: 500;
+
+                img {
+                    margin-right: .833rem;
+                    height: .833rem;
+                    @include atMedium {
+                        margin-right: .625rem;
+                        height: .625rem;
+                    }
+                }
+
+                p {
+                    color: $color-gray;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    line-height: 1;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &-profile {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @include atMedium {
+                margin: .75rem 0;
+            }
+
+            &-img {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                border-radius: 50%;
+                height: 3.5rem;
+                width: 3.5rem;
+                margin-right: .75rem;
+                pointer-events: none;
+                user-select: none;
+                @include atMedium {
+                    height: 2.625rem;
+                    width: 2.625rem;
+                    margin-right: .5625rem;
+                }
+            }
+
+            &-copy {
+                p {
+                    &:last-child {
+                        color: $color-primary;
+                        @include atMedium {
+                            color: $color-gray;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-rating {
+            margin-bottom: 1.667rem;
+            @include atMedium {
+                margin-bottom: 1.25rem;
+            }
+
+            &-estimate {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                margin: .25rem 0 .667rem 0;
+                @include atMedium {
+                    margin: .1875rem 0 .5rem 0;
+                }
+
+                i {
+                    font-size: 1.5rem;
+                    color: $color-gold;
+                    @include atMedium {
+                        font-size: 1.125rem;
+                    }
+
+                    & + i {
+                        margin-left: .333rem;
+                        @include atMedium {
+                            margin-left: .25rem;
+                        }
+                    }
+                }
+            }
+
+            &-category {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                width: 2.5rem;
+                @include atMedium {
+                    width: 1.875rem;
+                }
+
+                &-stars {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    i {
+                        margin-right: 3px;
+                        display: inline-block;
+                        font-size: 1rem;
+                        transform: translateY(-1px);
+                        @include atMedium {
+                            font-size: .75rem;
+                        }
+                    }
+
+                    i,
+                    p {
+                        color: $color-gold;
+                        line-height: 1;
+                    }
+                }
+
+                &-title {
+                    flex: 1;
+                    white-space: nowrap;
+                    margin-left: 1.167rem;
+                    line-height: 1;
+                    @include atMedium {
+                        margin-left: .875rem;
+                    }
+                }
+
+                & + & {
+                    margin-top: 1rem;
+                    @include atMedium {
+                        margin-top: .75rem;
+                    }
+                }
+            }
+        }
+
+        &-status {
+            padding: 1.25rem 0;
+            display: flex;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            @include atMedium {
+                 padding: .9375rem 0;
+            }
+
+            img {
+                margin-right: .833rem;
+                height: .833rem;
+                @include atMedium {
+                    margin-right: .625rem;
+                    height: .625rem;
+                }
+            }
+
+            p {
+                color: $color-gray;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                line-height: 1;
+                font-weight: 500;
+            }
+
+            &:before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: -1.667rem;
+                height: 100%;
+                width: calc(100% + 3.333rem);
+                background-color: rgba($color-gray, .1);
+                border-bottom-left-radius: .833rem;
+                border-bottom-right-radius: .833rem;
+                @include atMedium {
+                    left: -1.25rem;
+                    width: calc(100% + 2.5rem);
+                    border-bottom-left-radius: .625rem;
+                    border-bottom-right-radius: .625rem;
+                }
+            }
+        }
+
+        .btn {
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+        }
+
+        &--alt {
+            padding-bottom: 0;
+        }
+    }
+
+    &__popup {
+        background-color: $color-white;
+        border-radius: .833rem;
+        box-shadow: 0px 3px 13px 0px rgba($color-black, .05);
+        padding: 2.083rem 1.667rem 1.667rem 1.667rem;
+        margin: 0 auto;
+        position: relative;
+        @include atMedium {
+            border-radius: .625rem;
+            max-width: 21.25rem;
+            padding: 1.5625rem 1.25rem 1.25rem 1.25rem;
+        }
+
+        &-close {
+            position: relative;
+            cursor: pointer;
+            height: 2.667rem;
+            width: 2.667rem;
+            border-radius: 50%;
+            background-color: $color-gray;
+            transition: all .25s;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.667rem;
+            @include atMedium {
+                height: 2rem;
+                width: 2rem;
+                margin-bottom: 1.25rem;
+            }
+
+            &-line {
+                height: 2px;
+                width: 60%;
+                background-color: $color-white;
+                border-radius: 1rem;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                &:first-child {
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+
+                &:last-child {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
+
+            &:hover {
+                color: $color-white;
+                background-color: $color-primary;
+            }
+        }
+
+        .reviews__item-profile {
+            margin: 2.5rem 0 0 0;
+            @include atMedium {
+                margin-top: 1.875rem;
+            }
+        }
+    }
+}

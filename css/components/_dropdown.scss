@@ -1,0 +1,195 @@
+.dropdown {
+    @include atMedium {
+        max-width: 37.8125rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__item {
+        transition: all .25s;
+        backface-visibility: hidden;
+        border-radius: .5rem;
+        @include atMedium {
+            border-radius: .375rem;
+        }
+
+        &-header {
+            display: flex;
+            align-items: stretch;
+            justify-content: flex-start;
+            cursor: pointer;
+            background-color: $color-gray;
+            border-radius: .5rem;
+            overflow: hidden;
+            transition: all .25s;
+            backface-visibility: hidden;
+            @include atMedium {
+                border-radius: .375rem;
+            }
+
+            &-label,
+            &-content {
+                transition: all .25s;
+                backface-visibility: hidden;
+                padding: 1.667rem 1.25rem;
+                display: flex;
+                align-items: center;
+                position: relative;
+                @include atMedium {
+                    padding: 1.25rem .9375rem;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba($color-gray-drk, .28);
+                    opacity: 0;
+                    transition: all .25s;
+                    backface-visibility: hidden;
+                    pointer-events: none;
+                    user-select: none;
+                }
+            }
+
+            &-label {
+                width: 7rem;
+                text-align: center;
+                justify-content: center;
+                background-color: rgba($color-gray-drk, .1);
+                @include atMedium {
+                    width: 6.4375rem;
+                }
+
+                p {
+                    font-size: 1.333rem;
+                    font-weight: 600;
+                    color: $color-white;
+                    line-height: 1;
+                    position: relative;
+                    z-index: 1;
+                    @include atMedium {
+                        font-size: 1.125rem;
+                    }
+                }
+            }
+
+            &-content {
+                flex: 1;
+                position: relative;
+                transition: all .25s;
+                backface-visibility: hidden;
+                justify-content: flex-start;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 1.25rem;
+                    transform: translateY(-50%) rotate(180deg);
+                    background-image: url("../images/chevron.svg");
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: right center;
+                    width: 1.333rem;
+                    height: .75rem;
+                    transition: all .25s;
+                    backface-visibility: hidden;
+                    @include atMedium {
+                        right: 1.625rem;
+                        width: 1.3125rem;
+                        height: .6875rem;
+                    }
+                }
+
+                p {
+                    font-size: 1.25rem;
+                    font-weight: 500;
+                    color: $color-white;
+                    line-height: 1;
+                    position: relative;
+                    z-index: 1;
+                    @include atMedium {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            &:hover {
+                /* background-color: $color-primary; */
+
+                .dropdown__item {
+                    &-header {
+                        /* &-label {
+                            background-color: rgba($color-gray-drk, .1);
+                        }
+
+                        &-content {
+                            background-color: $color-primary;
+                        } */
+
+                        &-label,
+                        &-content {
+                            &:before {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &-content {
+            padding: 1.25rem 1.667rem;
+            display: none;
+            @include atMedium {
+                padding: .9375rem 1.5rem;
+            }
+
+            p {
+                color: $color-gray-drk;
+            }
+        }
+
+        & + & {
+            margin-top: 1.667rem;
+            @include atMedium {
+                margin-top: 1.0625rem;
+            }
+        }
+
+        &.is-active {
+            box-shadow: 0 0 6px rgba($color-black, .1);
+
+            .dropdown__item {
+                &-header {
+                    background-color: $color-primary;
+
+                    &-label {
+                        background-color: rgba($color-gray-drk, .1);
+                    }
+
+                    &-content {
+                        background-color: $color-primary;
+
+                        &:after {
+                            transform: translateY(-50%);
+                        }
+                    }
+
+                    &:hover {
+                        .dropdown__item-header-label,
+                        .dropdown__item-header-content {
+                            &:before {
+                                opacity: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

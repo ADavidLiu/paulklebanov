@@ -1,0 +1,53 @@
+.link {
+    display: inline-flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    cursor: pointer;
+    color: $color-primary;
+    transition: all .25s;
+    font-weight: 600;
+    @include linkStates($color-primary, none);
+
+    i {
+        margin-right: .833rem;
+        transform: translateY(.35rem);
+        @include atMedium {
+            margin-right: .625rem;
+            transform: translateY(.2rem);
+        }
+    }
+
+    &:hover {
+        color: $color-primary-drk;
+    }
+
+    &--btn {
+        border-radius: 10rem;
+        padding: .833rem 1.5rem .833rem 3.833rem;
+        background-image: url("../images/arrow-circle.svg");
+        background-repeat: no-repeat;
+        background-size: 1.833rem 1.833rem;
+        background-position: 1rem center;
+        @include atMedium {
+            padding: .625rem 1.125rem .625rem 2.6875rem;
+            background-size: 1.375rem 1.375rem;
+            background-position: .75rem center;
+        }
+
+        &-primary {
+            background-color: $color-primary;
+
+            &:hover {
+                background-color: $color-primary-drk;
+            }
+        }
+
+        &-gray {
+            background-color: $color-gray-drk-3;
+
+            &:hover {
+                background-color: $color-gray-drk-4;
+            }
+        }
+    }
+}

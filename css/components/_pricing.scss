@@ -1,0 +1,22 @@
+.pricing {
+    padding: 3.333rem 0 3.833rem 0;
+    background-color: rgba($color-gray-lgt, .5);
+    text-align: center;
+    @include atMedium {
+        padding: 2.5rem 0;
+    }
+
+    &__subtitle {
+        margin: 2.083rem 0 1.5rem 0;
+        @include atMedium {
+            margin: 2.0625rem 0 1rem 0;
+        }
+    }
+
+    &__text {
+        margin: 2.083rem 0;
+        @include atMedium {
+            margin: 1.5rem 0 1.25rem 0;
+        }
+    }
+}

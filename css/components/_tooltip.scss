@@ -1,0 +1,72 @@
+.tooltip {
+    position: relative;
+    z-index: initial;
+    display: block;
+    opacity: 1;
+    margin: 0;
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: -.833rem;
+        left: .833rem;
+        height: .667rem;
+        width: .667rem;
+        background-color: $color-gray-drk;
+        transform: translateY(-55%) rotate(-135deg);
+        opacity: 0;
+        pointer-events: none;
+        user-select: none;
+        transition: all .25s;
+        backface-visibility: hidden;
+        clip-path: polygon(0 0, 100% 0, 0 100%, 0 0);
+        @include atMedium {
+            top: -.625rem;
+            left: .625rem;
+            height: .5rem;
+            width: .5rem;
+        }
+    }
+
+    &:after {
+        content: attr(data-tooltip-content);
+        line-height: 1;
+        position: absolute;
+        z-index: 1;
+        top: -.833rem;
+        left: 0;
+        background-color: $color-gray-drk;
+        padding: .65rem .833rem;
+        border-radius: .5rem;
+        opacity: 0;
+        display: block;
+        transition: all .25s;
+        backface-visibility: hidden;
+        pointer-events: none;
+        user-select: none;
+        font-size: 1.083rem;
+        font-weight: 500;
+        color: $color-primary-lgt-2;
+        white-space: nowrap;
+        transform: translateY(-100%);
+        box-shadow: 0 0 1.4167rem rgba($color-black, .21);
+        @extend .p;
+        @include atMedium {
+            top: -.625rem;
+            font-size: .8125rem;
+            padding: .5rem .625rem;
+            border-radius: .375rem;
+            box-shadow: 0 0 1.0625rem rgba($color-black, .21);
+        }
+    }
+
+    &:hover {
+        &:before {
+            opacity: 1;
+        }
+
+        &:after {
+            opacity: 1;
+        }
+    }
+}

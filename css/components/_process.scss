@@ -1,0 +1,22 @@
+.process {
+    padding: 2.8333rem 0 6.65rem 0;
+    @include atMedium {
+        padding: 2.125rem 0 4.875rem 0;
+    }
+
+    &__subtitle {
+        text-align: center;
+        margin: 1.25rem 0 2.9167rem 0;
+        @include atMedium {
+            margin: 1.25rem 0 2.1875rem 0;
+        }
+    }
+
+    &__steps {
+        margin-top: 2.9167rem;
+        @include atMedium {
+            margin-top: 2.1875rem;
+            margin-bottom: 2.875rem;
+        }
+    }
+}

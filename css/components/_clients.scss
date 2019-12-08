@@ -1,0 +1,72 @@
+.clients {
+    padding: 2.9167rem 0 5rem 0;
+    background-color: rgba($color-gray-lgt, .5);
+    @include atMedium {
+        padding: 2.1875rem 0 3.125rem 0;
+    }
+
+    &__main {
+        margin-top: 3.333rem;
+        @include atMedium {
+            margin-top: 1.875rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+
+            &:first-child {
+                height: 2.9167rem;
+                @include atMedium {
+                    height: 2.1875rem;
+                }
+            }
+
+            &:nth-child(2) {
+                height: 2.5rem;
+                @include atMedium {
+                    height: 1.875rem;
+                }
+            }
+            
+            &:nth-child(3) {
+                height: 2.9167rem;
+                @include atMedium {
+                    height: 2.1875rem;
+                }
+            }
+            
+            &:nth-child(4) {
+                height: 5.25rem;
+                @include atMedium {
+                    height: 3.9375rem;
+                }
+            }
+
+            &:nth-child(5) {
+                height: 3.583rem;
+                @include atMedium {
+                    height: 2.6875rem;
+                }
+            }
+
+            &:nth-child(6) {
+                height: 2rem;
+                @include atMedium {
+                    height: 1.5rem;
+                }
+            }
+
+            & + img {
+                margin-top: 2.9167rem;
+                @include atMedium {
+                    margin-top: 0;
+                    margin-left: 3.125rem;
+                }
+            }
+        }
+    }
+}

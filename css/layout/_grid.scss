@@ -1,0 +1,8 @@
+.container {
+    padding-left: 20px;
+    padding-right: 20px;
+    @include atMedium {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}

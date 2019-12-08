@@ -1,0 +1,109 @@
+.bio {
+    padding: 4.5rem 0 5.333rem 0;
+    background-color: $color-gray-alt;
+    @include atMedium {
+        padding: 3.875rem 0 4.5rem 0;
+    }
+
+    &__platform-logos {
+        margin-top: 2.5rem;
+        margin-bottom: -3.333rem;
+        @include atMedium {
+            margin-top: 1.875rem;
+            margin-bottom: -1.875rem;
+        }
+    }
+
+    &__platform-logo {
+        margin-bottom: 3.333rem;
+        @include atMedium {
+            margin-bottom: 1.875rem;
+        }
+
+        &:first-child {
+            width: 15rem;
+            @include atMedium {
+                width: 11.25rem;
+            }
+        }
+
+        &:last-child {
+            width: 13.333rem;
+            @include atMedium {
+                width: 10rem;
+            }
+        }
+    }
+
+    &__speaking {
+        margin-top: 3.75rem;
+        padding: 2.5rem 2rem 2rem 2rem;
+        background-color: $color-white;
+        border-radius: 1.083rem;
+        @include atMedium {
+            margin-top: 2.8125rem;
+            padding: 1.875rem;
+            border-radius: .8125rem;
+        }
+
+        &-title {
+            margin-bottom: 1.5rem;
+            @include atMedium {
+                margin-bottom: 1.25rem;
+            }
+        }
+
+        &-category {
+            p {
+                color: rgba($color-gray-alt-5, .51);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                margin-bottom: .667rem;
+                @include atMedium {
+                    margin-bottom: .5rem;
+                }
+            }
+
+            &-logos {
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                margin: -10px;
+
+                img {
+                    padding: 10px;
+                }
+            }
+
+            & + & {
+                margin-top: 2.167rem;
+                @include atMedium {
+                    margin-top: 1.625rem;
+                }
+            }
+        }
+
+        &-video {
+            position: relative;
+            margin-top: 2.5rem;
+            @include atMedium {
+                margin-top: 0;
+            }
+
+            img {
+                border-radius: 1.333rem;
+                @include atMedium {
+                    border-radius: 1rem;
+                }
+            }
+
+            .play-btn {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}

@@ -1,0 +1,62 @@
+.btn {
+    border-radius: 10rem;
+    background-color: $color-primary;
+    padding: 1.333rem 3.333rem;
+    color: $color-white;
+    cursor: pointer;
+    transition: all .25s;
+    backface-visibility: hidden;
+    background-color: $color-primary;
+    line-height: 1.5;
+    font-weight: 600;
+    white-space: initial;
+    @extend .p;
+    @include linkStates($color-white, none);
+    @include atMedium {
+        padding: 1rem 2.5rem;
+    }
+
+    &:hover {
+        background-color: $color-primary-drk;
+    }
+
+    &:active {
+        background-color: $color-primary-alt;
+        box-shadow: none;
+    }
+
+    &--white {
+        color: $color-primary;
+        background-color: $color-white;
+        @include linkStates($color-primary, none);
+
+        &:hover {
+            color: $color-white;
+            background-color: $color-gray-drk;
+        }
+    }
+
+    &--sm {
+        padding: .25rem 1rem;
+        @extend .p--sm-2;
+        @include atMedium {
+            padding: .1875rem .75rem;
+        }
+    }
+
+    &--md {
+        padding: .667rem 1rem;
+        @include atMedium {
+            padding: .5rem .75rem;
+        }
+    }
+
+    &--lg {
+        font-size: 1.25rem;
+        padding: 1.667rem 4.167rem;
+        @include atMedium {
+            font-size: .9375rem;
+            padding: 1.25rem 3.125rem;
+        }
+    }
+}

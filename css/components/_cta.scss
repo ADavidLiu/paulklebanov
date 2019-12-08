@@ -1,0 +1,107 @@
+.cta {
+    text-align: center;
+    padding: 3.333rem 0 3.833rem 0;
+    background-color: rgba($color-gray-lgt, .5);
+    @include atMedium {
+        padding: 2.5rem 0 2.875rem 0;
+    }
+
+    &__contact {
+        margin: 1.833rem 0 2.333rem 0;
+        @include atMedium {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2.1875rem 0 1.75rem 0;
+        }
+
+        &-item {
+            position: relative;
+
+            & + & {
+                margin-top: 1rem;
+                padding-top: 1rem;
+                @include atMedium {
+                    margin-top: 0;
+                    padding-top: 0;
+                    padding-left: 1.5rem;
+                    margin-left: 1.5rem;
+                }
+
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 2.833rem;
+                    height: 2px;
+                    background-color: $color-primary;
+                    border-radius: 1rem;
+                    @include atMedium {
+                        height: 100%;
+                        width: 2px;
+                        left: 0;
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &__notice {
+        background-color: $color-white;
+        padding: 1rem;
+        margin-bottom: 1.75rem;
+        border-radius: .4167rem;
+        @include atMedium {
+            padding: .75rem 1.5625rem;
+            margin-bottom: 2.25rem;
+            border-radius: .3125rem;
+        }
+
+        &-check {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.25rem;
+            width: 2.25rem;
+            min-height: 2.25rem;
+            min-width: 2.25rem;
+            border-radius: 50%;
+            background-color: $color-primary;
+            background-image: url("../images/check.svg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: auto 40%;
+            margin-right: 1.167rem;
+            @include atMedium {
+                height: 1.6875rem;
+                width: 1.6875rem;
+                min-height: 1.6875rem;
+                min-width: 1.6875rem;
+                margin-right: .875rem;
+            }
+        }
+
+        &-copy {
+            flex: 1;
+            text-align: left;
+        }
+
+        & + & {
+            margin-top: 1rem;
+            @include atMedium {
+                margin-top: .625rem;
+            }
+        }
+    }
+
+    &__btn {
+        @media screen and (max-width: 768px) {
+            width: 100%;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+    }
+}

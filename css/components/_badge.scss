@@ -1,0 +1,44 @@
+.badge {
+    border-radius: .4167rem;
+    overflow: hidden;
+    display: block;
+    text-align: left;
+    background-color: rgba($color-gray-alt-3, .4);
+    padding: 0;
+    margin: 0;
+    white-space: initial;
+    @include atMedium {
+        border-radius: .3125rem;
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+
+    &__copy {
+        padding: 1.333rem;
+        @include atMedium {
+            padding: .75rem 1.125rem;
+        }
+    }
+
+    &__icon {
+        padding: 1.333rem 1.667rem;
+        background-color: rgba($color-white, .45);
+        @include atMedium {
+            padding: .5rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            height: 2.667rem;
+            width: auto;
+            @include atMedium {
+                height: 2rem;
+                width: 5.8125rem;
+                min-width: 5.8125rem;
+            }
+        }
+    }
+}

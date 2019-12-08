@@ -1,0 +1,61 @@
+.why {
+    padding: 5.25rem 0;
+    @include atMedium {
+        padding: 3.9375rem 0;
+    }
+
+    &__main {
+        margin-top: 2.667rem;
+        @include atMedium {
+            margin-top: 3.25rem;
+        }
+    }
+
+    &__item {
+        margin-bottom: 2.833rem;
+        @include atMedium {
+            margin-bottom: 3.375rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        &-check {
+            height: 3.167rem;
+            width: 3.167rem;
+            min-height: 3.167rem;
+            min-width: 3.167rem;
+            border-radius: 50%;
+            background-color: $color-primary;
+            background-image: url("../images/check.svg");
+            background-repeat: no-repeat;
+            background-size: auto 40%;
+            background-position: center;
+            margin-bottom: 1.667rem;
+            pointer-events: none;
+            user-select: none;
+            @include atMedium {
+                height: 2.375rem;
+                width: 2.375rem;
+                min-height: 2.375rem;
+                min-width: 2.375rem;
+                margin-bottom: 0;
+                margin-right: 1.5625rem;
+            }
+        }
+
+        &-copy {
+            flex: 1;
+
+            p {
+                font-weight: 500;
+                color: $color-gray;
+
+                strong {
+                    font-weight: 700;
+                    color: $color-gray-drk-5;
+                }
+            }
+        }
+    }
+}

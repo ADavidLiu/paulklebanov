@@ -1,0 +1,56 @@
+table {
+    width: 100%;
+
+    th,
+    td {
+        padding: 1rem;
+        font-weight: 400;
+        color: $color-gray-drk;
+        line-height: 1;
+        @extend .p;
+        @extend .p--md;
+        @include atMedium {
+            padding: .75rem;
+        }
+
+        &:first-child {
+            border-top-left-radius: .25rem;
+            border-bottom-left-radius: .25rem;
+            @include atMedium {
+                border-top-left-radius: .1875rem;
+                border-bottom-left-radius: .1875rem;
+            }
+        }
+
+        &:last-child {
+            border-top-right-radius: .25rem;
+            border-bottom-right-radius: .25rem;
+            @include atMedium {
+                border-top-right-radius: .1875rem;
+                border-bottom-right-radius: .1875rem;
+            }
+        }
+    }
+
+    th {
+        font-weight: 500;
+        color: $color-gray;
+        background-color: $color-gray-alt-7;
+    }
+
+    tbody {
+        tr {
+            &:nth-child(even) {
+                background-color: $color-gray-alt;
+            }
+        }
+
+        td {
+            &:first-child {
+                text-align: center;
+                color: $color-gray;
+                font-weight: 500;
+            }
+        }
+    }
+}
